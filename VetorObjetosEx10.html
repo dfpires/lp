@@ -1,0 +1,49 @@
+<html>
+    <head>
+		<script>
+			var vetor = [];
+			
+			function teste(){
+				var agora = new Date();				
+				alert(agora.getDate() + " " + (agora.getMonth() + 1) + " " + agora.getFullYear());
+			}
+			function teste2(){
+				var usuario = new Date();				
+				usuario.setDate(parseInt(prompt("Informe dia")));
+				usuario.setMonth(parseInt(prompt("Informe mes")) - 1);
+				usuario.setFullYear(parseInt(prompt("Informe ano")));
+				alert(usuario.getDate() + " " + (usuario.getMonth() + 1) + " " + usuario.getFullYear());
+			}
+			function teste3(){
+				var usuario = new Date();				
+				var data = prompt("Informe data no formato dd/mm/aaaa");
+				var dia = data.substring(0, 2);
+				var mes = data.substring(3, 5);
+				var ano = data.substring(6, 10);
+				usuario.setDate(parseInt(dia));
+				usuario.setMonth(parseInt(mes)-1);
+				usuario.setFullYear(parseInt(ano));
+				alert(usuario.getDate() + " " + (usuario.getMonth() + 1) + " " + usuario.getFullYear());
+			}
+			function teste4(){
+				var usuario = new Date();
+				var data = document.getElementById("data").value;
+				var dia = data.substring(8, 10);
+				var mes = data.substring(5, 7);
+				var ano = data.substring(0, 4);
+				usuario.setDate(parseInt(dia));
+				usuario.setMonth(parseInt(mes)-1);
+				usuario.setFullYear(parseInt(ano));
+				alert(usuario.getDate() + " " + (usuario.getMonth() + 1) + " " + usuario.getFullYear());
+			}
+		</script>	
+    </head>
+    <body>
+			<p>
+				Informe data de vencimento <input type="date" id="data">
+			</p>
+			<p>
+				<button onclick="teste4()"> Calcula </button>
+			</p>
+    </body>
+</html>
