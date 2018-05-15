@@ -2,10 +2,10 @@ function cadastra(){
 	// cria um objeto
 	var objeto = new Object();
 	// atribui valores às propriedades
-	objeto.codigo = parseFloat(prompt("Informe código do produto"));
-	objeto.descricao = parseInt(prompt("Informe descrição do produto"));
-	objeto.valor = parseInt(prompt("Informe valor unitário"));
-	objeto.qtde = prompt("Informe qtde em estoque");
+	objeto.codigo = parseInt(prompt("Informe código do produto"));
+	objeto.descricao = prompt("Informe descrição do produto");
+	objeto.valor = parseFloat(prompt("Informe valor unitário"));
+	objeto.qtde = parseInt(prompt("Informe qtde em estoque"));
 	// adiciono o objeto no vetor	
 	vetor.push(objeto);
 	ordena(vetor);
@@ -30,3 +30,34 @@ function lista(){
 		alert("Código: " + vetor[i].codigo + " Descrição: " + vetor[i].descricao + " Qtde: " + vetor[i].qtde + " Valor: " + vetor[i].valor);
 	}
 }
+function altera(){
+	var codigo = parseInt(prompt("Informe código do produto"));
+	for(i=0;i<vetor.length;i++){
+		if (codigo == vetor[i].codigo){ // achei
+			vetor[i].descricao = prompt("Informe nova descrição do produto");
+			vetor[i].valor = parseFloat(prompt("Informe novo valor unitário"));
+			vetor[i].qtde = parseInt(prompt("Informe nova qtde em estoque"));	
+			break; // sai do for
+		}
+	}
+	if (i == vetor.length){
+		alert("Produto não existe");
+	}
+}
+function listaEstoqueCritico(){
+	var i; var conta = 0;
+	for(i=0;i<vetor.length;i++){
+		if (vetor[i].qtde < 5){
+			alert("Código: " + vetor[i].codigo + " Descrição: " + vetor[i].descricao + " Qtde: " + vetor[i].qtde + " Valor: " + vetor[i].valor);
+			conta++;
+		}
+	}
+	if (conta == 0){
+		alert("Não existe produto com estoque crítico");
+	}
+}
+
+
+
+
+
