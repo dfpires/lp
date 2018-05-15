@@ -56,7 +56,19 @@ function listaEstoqueCritico(){
 		alert("Não existe produto com estoque crítico");
 	}
 }
-
+function remove(){
+	var codigo = parseInt(prompt("Informe código do produto"));
+	for(i=0;i<vetor.length;i++){
+		if (codigo == vetor[i].codigo){ // achei
+				vetor.splice(i, 1);
+				alert("Remoção realizada com sucesso");
+				break;
+		}
+	}
+	if (i == vetor.length){
+		alert("Produto não existe");
+	}
+}
 
 
 
