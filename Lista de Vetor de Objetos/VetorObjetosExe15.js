@@ -57,5 +57,30 @@ function mostraReceitas(){
 		alert("Não existem receitas desse cozinheiro");
 	}
 }
+function mostraReceitasCalorias(){
+	var lMinimo = parseInt(prompt("Limite mínimo de caloria"));
+	var lMaximo = parseInt(prompt("Limite máximo de caloria"));
+	var qtde = 0;
+	for(var i = 0 ; i < vetorReceitas.length; i++){
+		if ((vetorReceitas[i].calorias >= lMinimo) && (vetorReceitas[i].calorias <= lMaximo)){
+			alert("Nome da receita " + vetorReceitas[i].nome);
+			qtde++;
+		}
+	}
+	if (qtde == 0){
+		alert("Não existem receitas com esse intervalo de caloria");
+	}
+}
 
-
+function mostraReceitasCozinheiro(){
+	var qtde;
+	for(var i = 0 ; i < vetorCozinheiros.length; i++){ // para cada cozinheiro
+		qtde = 0; // zera a qtde de receitas do novo cozinheiro
+		for(var j = 0 ; j < vetorReceitas.length; j++){ // para cada receita
+			if (vetorReceitas[j].cozinheiro == vetorCozinheiros[i].codigo){
+				qtde++;
+			}
+		}
+		alert(vetorCozinheiros[i].nome + " Qtde receitas " + qtde);
+	}
+}
