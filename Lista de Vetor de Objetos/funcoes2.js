@@ -1,4 +1,4 @@
-function principal(){
+function principal2(){
 	// exercício 2
 	var h, m, s;
 	h = parseInt(prompt("Informe as horas"));

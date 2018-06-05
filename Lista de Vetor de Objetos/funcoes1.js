@@ -1,4 +1,4 @@
-function principal(){
+function principal1(){
 	// exercício 1
 	var n = parseInt(prompt("Informe um valor"));
 	alert("Soma dos elementos " + exe1(n));
