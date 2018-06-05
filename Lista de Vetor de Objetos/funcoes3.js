@@ -29,6 +29,9 @@ function exe3(pcadeia1, pcadeia2){
 			if (pcadeia1[i] != pcadeia2[i]){
 				return i; // achei índice
 			}
+			else {
+				
+			}
 		}
 		// não achei índice
 		return menorIndice + 1;
